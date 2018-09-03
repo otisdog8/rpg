@@ -1,15 +1,20 @@
-class game(object):
+class game:
     """Starts the game, coordinates menus, fighting, turns, ect, ect"""
     def __init__(self, arg):
-        super(game, self).__init__()
         self.arg = arg
         import menu
         #Check for existence of savefile
+        savefileexists = False
         try:
-            #open savefile
             self.savefileexists = True
         except:
             self.savefileexists = False
         self.start(savefileexists)
-    def start(savefileexists):
-        pass
+    def start(self,savefileexists):
+        if savefileexists == False:
+            pass
+        elif savefileexists == True:
+            pass
+        else:
+            print("This is am impossible error")
+gaem = game('test')
