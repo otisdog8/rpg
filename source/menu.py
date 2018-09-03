@@ -6,4 +6,3 @@ class menu:
             self.fileexists = True
         except:
             pass
-        
