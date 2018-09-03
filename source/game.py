@@ -17,4 +17,4 @@ class game:
             pass
         else:
             print("This is am impossible error")
-gaem = game('test')
+    
