@@ -1,0 +1,1 @@
+python -B game.py
