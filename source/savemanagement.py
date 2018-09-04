@@ -1,3 +1,6 @@
+#This allows my custom import method to find the class
+def add():
+    return savemanager()
 class savemanager:
     """Manages saves."""
     def __init__(self):
@@ -8,4 +11,3 @@ class savemanager:
         pass
     def modifysave(arg):
         pass
-    

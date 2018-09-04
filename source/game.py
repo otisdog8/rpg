@@ -1,20 +1,22 @@
 class game:
     """Starts the game, coordinates menus, fighting, turns, ect, ect"""
-    def __init__(self, arg):
-        self.arg = arg
+    def __init__(self):
         import menu
-        #Check for existence of savefile
-        savefileexists = False
         try:
+            savefile = open("savefile.txt",'r')
+            savefile.close()
             self.savefileexists = True
         except:
             self.savefileexists = False
         self.start(savefileexists)
+        self.savemanager = self.importer('savemanagement')
     def start(self,savefileexists):
         if savefileexists == False:
-            pass
+            self.save = self.savemanager.nosave()
         elif savefileexists == True:
-            pass
+            self.save = self.savemanager.opensave()
         else:
             print("This is am impossible error")
-    
+    def importer(self,module):
+        output = __import__(module)
+        return output.add()
