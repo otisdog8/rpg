@@ -19,6 +19,7 @@ class game:
             self.player.getstats(self.save)
         else:
             pass
+        self.gameloop()
     def start(self,savefileexists): #Works with the save
         if savefileexists == False:
             self.save = self.savemanager.nosave()
@@ -27,9 +28,9 @@ class game:
         else:
             print("This is am impossible error")
         self.player.getstats(self.save)
-    def gameloop():
+    def gameloop(self):
         while 1:
-            self.player.fight()
+            self.player.startfight()
     def importer(self,module): #My custom import method
         output = __import__(module)
         return output.add()
