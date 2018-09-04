@@ -11,10 +11,11 @@ class game:
         except:
             savefileexists = False
         self.start(savefileexists)
-        if self.menus.start() == '1':
+        response = self.menus.start()
+        if response == '1':
             pass
-        elif:
-            self.save = seld.savemanager.nosave() #If the player wants to reset this happens
+        elif response == '2':
+            self.save = self.savemanager.nosave() #If the player wants to reset this happens
             self.player.getstats(self.save)
         else:
             pass
@@ -26,6 +27,9 @@ class game:
         else:
             print("This is am impossible error")
         self.player.getstats(self.save)
+    def gameloop():
+        while 1:
+            self.player.fight()
     def importer(self,module): #My custom import method
         output = __import__(module)
         return output.add()

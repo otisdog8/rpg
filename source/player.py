@@ -14,4 +14,17 @@ class player():
         self.maxhp = self.endurance * 10
         self.level = self.math.floor(float(self.xp/100))
         self.totalstats = self.level*5+20
-    
+    def heal(): #Heals the character
+        self.hp = self.hp + self.endurance
+        if self.hp > self.maxhp:
+            self.hp = self.maxhp
+        else:
+            pass
+    def fight(): #The main fight loop
+        enemy = self.importer('enemy')
+        enemy.create(self.level)
+        enemy.fight(self.strength)
+
+    def importer(self,module): #My custom import method
+        output = __import__(module)
+        return output.add()
